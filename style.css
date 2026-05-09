@@ -1,47 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
 }
 
-.container {
-    width: 90%;
-    max-width: 400px;
-    margin: 60px auto;
-    background: white;
+.main-header {
+    background: #075E54;
+    color: white;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-h1 {
     text-align: center;
-    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.booking-form {
+.layout-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch; /* Makes all cards the same height */
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 1; /* Makes all cards the same width */
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
 }
 
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #075E54;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* Driver Details Styles */
+.avatar {
+    font-size: 50px;
+    text-align: center;
+    background: #e8f5e9;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.status {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Calculator Styles */
+.fare-display {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.fare-display h2 {
+    margin: 5px 0 0 0;
+    color: #2e7d32;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+
+/* Input & Button Styles */
 input {
+    width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    outline: none;
 }
 
-button {
+input:focus {
+    border-color: #25D366;
+}
+
+.whatsapp-btn {
+    width: 100%;
     padding: 14px;
     background: #25D366;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
     font-size: 16px;
+    transition: background 0.3s;
+    margin-top: auto; /* Pushes button to bottom of the card content */
 }
 
-button:hover {
+.whatsapp-btn:hover {
     background: #1ebc59;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .layout-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 450px;
+    }
 }
